@@ -1,0 +1,40 @@
+/* ---------------------------------------------- *\
+
+  Partial: grid
+
+  We're using Susy. Please visit http://susy.readthedocs.org/en/latest/install/
+
+  Due to using Susy, we're going to need the Ruby gems installed. Please a see a guide here: [TBD].
+
+  Usage
+  =====
+
+\* ---------------------------------------------- */
+
+
+/* - Index
+-------------------------------------------------
+	- Susy ................................. 1.0.
+	- Grids ................................ 2.0.
+*/
+
+
+/* -----------------------------------------
+	1.0. Susy
+----------------------------------------- */
+
+@import "susy";
+
+/* -----------------------------------------
+	2.0. Grid
+----------------------------------------- */
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+
+$shorthand: 12 1/4 fluid float inside;

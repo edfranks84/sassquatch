@@ -1,0 +1,30 @@
+/* ---------------------------------------------- *\
+
+	Big Mama Styles!
+
+	Here we collate all of our partials into one file ready to be processed and generate that
+	beautiful CSS.
+
+\* ---------------------------------------------- */
+
+/* - Index
+-------------------------------------------------
+	- var ................................. 1.0.
+	- reset ................................ 2.0.
+*/
+
+/* -----------------------------------------
+	1.0. variables
+----------------------------------------- */
+@import "modules/var";
+
+/* -----------------------------------------
+	1.0. reset
+----------------------------------------- */
+@import "partials/reset";
+
+@import "partials/grid";
+
+@import "partials/nav";
+
+@import "partials/typography";
