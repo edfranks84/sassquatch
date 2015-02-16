@@ -1,16 +1,17 @@
 # sassquatch
 
-This sassquatch is based upon Dan Eden's 'Belt'. I've modified it ever so slightly in order to use more of my own bits and pieces. But Kudos to that man. I hope to change it more and more over the coming months.
+This is sassquatch. Experts dispute it's existance, but you've found me. I am a Sass and Grunt scaffold for the cool kids.
 
 
 ## Structure
 
 - `assets/` contains—surprise, surprise—assets for your project. When running, Grunt will watch for changes in `images` and `scss` to optimise any SVGs found in `images/src/`, create PNGs from them, and compile your Sass files to CSS. Phew!
 - `assets/scss/` is kind of a treasure trove, but hopefully all the SCSS files in there are well-written enough for you to understand. Consider it homework.
-- `config.rb` contains configuration options for Compass and Sass.
 - `Gruntfile.js` is the workhorse, with rules for watching and processing files. It compiles Sass, optimises and converts SVGs, concatenates JS, adds prefixes to CSS, adds `rem` fallbacks to CSS, and compresses CSS.
 - `index.html` is just there for demonstrative purposes.
 - `README.md` is generated from the project title and description.
+
+*Note*: I've removed compass from the workings as I wanted to try LibSass as it's crazy fast. You can add or change things up however you like. 
 
 ## How do I use it?
 
