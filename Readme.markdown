@@ -11,7 +11,7 @@ This is sassquatch. Experts dispute my existance, but you've found me. I am a Sa
 - `index.html` is just there for demonstrative purposes.
 - `README.md` is generated from the project title and description.
 
-*Note*: I've removed compass from the workings as I wanted to try LibSass as it's crazy fast. You can add or change things up however you like. 
+***Note***: I've removed compass from the workings as I wanted to try LibSass as it's crazy fast. You can add or change things up however you like. 
 
 ## How do I use it?
 
@@ -22,4 +22,4 @@ I'm a dirty Windows user so we use ```%USERPROFILE%\.grunt-init\sassquatch``` in
 3. In your new, empty project directory, run grunt init: `grunt-init sassquatch`
 4. Finally, grab the dependencies and get Grunt running: `npm install && grunt`
 
-*NOTE*: I've now added Notify to the task options. If you're on Windows 8.1 or newer no additional installations are required. If you are on Windows 7 you will need to install [Snarl](http://snarl.fullphat.net/) and [Growl](http://www.growlforwindows.com/gfw/help/growlnotify.aspx).
+***Note***: I've now added Notify to the task options. If you're on Windows 8.1 or newer no additional installations are required. If you are on Windows 7 you will need to install [Snarl](http://snarl.fullphat.net/) and [Growl](http://www.growlforwindows.com/gfw/help/growlnotify.aspx).
