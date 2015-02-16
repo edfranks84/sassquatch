@@ -105,14 +105,23 @@ module.exports = function(grunt) {
 
     // Compile SASS
     sass: {
+      app: {
+        // Takes every file that ends with .scss from the scss 
+        // directory and compile them into the css directory. 
+        // Also changes the extension from .scss into .css. 
+        // Note: file name that begins with _ are ignored automatically
+        files: [{
+          expand: true,
+          cwd: 'scss',
+          src: ['*.scss'],
+          dest: 'css',
+          ext: '.css'
+        }]
+      },
       options: {
-        compass: false,
-        sourceMap: true,
-        require: 'susy'
-      },
-      dist: {
-        'assets/css/style.css': 'assets/scss/style.scss',
-      },
+        sourceMap: true, 
+        outputStyle: 'nested'
+      }
     },
 
     // Automatically add required CSS prefixes
