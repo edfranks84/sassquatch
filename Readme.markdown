@@ -1,6 +1,6 @@
 # sassquatch
 
-This is sassquatch. Experts dispute it's existance, but you've found me. I am a Sass and Grunt scaffold for the cool kids.
+This is sassquatch. Experts dispute my existance, but you've found me. I am a Sass and Grunt scaffold for the cool kids.
 
 
 ## Structure
