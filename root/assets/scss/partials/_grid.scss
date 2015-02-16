@@ -14,27 +14,64 @@
 
 /* - Index
 -------------------------------------------------
-	- Susy ................................. 1.0.
-	- Grids ................................ 2.0.
+	- Global defaults     ............................. 1.0.
+	- Grid makeup         ............................. 2.0.
 */
 
-
-/* -----------------------------------------
-	1.0. Susy
------------------------------------------ */
-
-@import "frameworks/susy";
-
-/* -----------------------------------------
-	2.0. Grid
------------------------------------------ */
+/* ---------------------------------------------- *\
+  1.0 Global defaults
+\* ---------------------------------------------- */
 
 $susy: (
-  columns: 12,
-  gutters: 1/4,
+  flow: ltr,
   math: fluid,
   output: float,
-  gutter-position: inside,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 12,
+  gutters: 25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
 );
 
-$shorthand: 12 1/4 fluid float inside;
+/* ---------------------------------------------- *\
+  1.0 Grid makeup
+\* ---------------------------------------------- */
+
+$max-width: 1200px;
+$grid-namespace: "contain";
+$grid-column-namespace: "g-";
+$grid-width: $max-width;
+
+$breakpoint-to-ems: true;
+
+// set basics followed by customs 
+$breakpoints: (
+  tiny: 320px
+);
+
+//generate our grid classes
+@for $i from 1 through map-get($susy, columns) {
+ .#{$grid-column-namespace}#{$i} {
+    @include span($i of 12);
+
+    @include breakpoint(map-get($breakpoints, tiny)) {
+      @include span(full);
+    }
+  }
+}
