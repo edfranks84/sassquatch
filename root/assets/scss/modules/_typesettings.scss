@@ -48,25 +48,25 @@ $base-font-size: 16px !default;
 // 
 //$ms-ratio: 1.414 !default;
 
-$ms-ratio(
-  $phi: 1.618,
-  $golden: 1.618,
-  $double-octave: 4,
-  $major-twelfth: 3,
-  $major-eleventh: 2.667,
-  $major-tenth: 2.5,
-  $octave: 2,
-  $major-seventh: 1.875,
-  $minor-seventh: 1.778,
-  $major-sixth: 1.667,
-  $minor-sixth: 1.6,
-  $fifth: 1.5,
-  $augmented-fourth: 1.414,
-  $fourth: 1.333,
-  $major-third: 1.25,
-  $minor-third: 1.2,
-  $major-second: 1.125,
-  $minor-second: 1.067
+$ms-ratio: (
+  phi: 1.618,
+  golden: 1.618,
+  double-octave: 4,
+  major-twelfth: 3,
+  major-eleventh: 2.667,
+  major-tenth: 2.5,
+  octave: 2,
+  major-seventh: 1.875,
+  minor-seventh: 1.778,
+  major-sixth: 1.667,
+  minor-sixth: 1.6,
+  fifth: 1.5,
+  augmented-fourth: 1.414,
+  fourth: 1.333,
+  major-third: 1.25,
+  minor-third: 1.2,
+  major-second: 1.125,
+  minor-second: 1.067
 );
 
 @function ms-get-ratio($name) {
@@ -108,13 +108,13 @@ $ratio: ms-get-ratio(major-third);
 // [5] Two steps up in the modular scale in EMs
 // [6] Three steps up in the modular scale in EMs
 // [7] Four steps up in the modular scale in EMs
-$ms-down1: $base-em-font-size / $ms-ratio; // [1]
-$ms-down2: $ms-down1 /$ms-ratio; // [2]
-$ms-down3: $ms-down2 / $ms-ratio; // [3]
-$ms-up1: $base-em-font-size * $ms-ratio; // [4]
-$ms-up2: $ms-up1 * $ms-ratio; // [5]
-$ms-up3: $ms-up2 * $ms-ratio; // [6]
-$ms-up4: $ms-up3 * $ms-ratio; // [7]
+$ms-down1: $base-em-font-size / $ratio; // [1]
+$ms-down2: $ms-down1 /$ratio; // [2]
+$ms-down3: $ms-down2 / $ratio; // [3]
+$ms-up1: $base-em-font-size * $ratio; // [4]
+$ms-up2: $ms-up1 * $ratio; // [5]
+$ms-up3: $ms-up2 * $ratio; // [6]
+$ms-up4: $ms-up3 * $ratio; // [7]
 
 // Warning text for when an integer is not used in rhythm functions
 $not-integer-txt: ' value breaks vertical rhythm. Use an interger (whole number) for $lines.';

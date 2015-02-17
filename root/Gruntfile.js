@@ -112,9 +112,9 @@ module.exports = function(grunt) {
         // Note: file name that begins with _ are ignored automatically
         files: [{
           expand: true,
-          cwd: 'scss',
+          cwd: 'assets/scss',
           src: ['*.scss'],
-          dest: 'css',
+          dest: 'assets/css',
           ext: '.css'
         }]
       },
