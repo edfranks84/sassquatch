@@ -17,9 +17,11 @@
 	1.0. variables
 ----------------------------------------- */
 
-@import "frameworks/susy";
+@import "helpers/susy";
 
-@import "frameworks/breakpoint";
+@import "helpers/breakpoint";
+
+@import "modules/typesettings";
 
 @import "modules/var";
 
