@@ -5,11 +5,11 @@ module.exports = function(grunt) {
   var BUILD_DIR = '.';
 
   // The order matters!
-  var jsFiles = [
-    'assets/js/plugins/*.js',
-    'assets/js/src/*.js',
-    'assets/js/src/**/*.js'
-  ];
+  // var jsFiles = [
+  //   '/js/plugins/*.js',
+  //   '/js/src/*.js',
+  //   '/js/src/**/*.js'
+  // ];
 
   grunt.initConfig({
 
@@ -48,8 +48,8 @@ module.exports = function(grunt) {
           stripBanners: true,
           separator: ';'
         },
-        src: jsFiles,
-        dest: 'assets/js/<%= pkg.name %>.js'
+        src: '/js/main.js',
+        dest: '/js/<%= pkg.name %>.js'
       }
     },
 
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           banner: '<%= banner %>'
         },
         files: {
-          'assets/js/<%= pkg.name %>.min.js': jsFiles
+          '/js/<%= pkg.name %>.min.js': '/js/main.js'
         }
       }
     },
@@ -75,9 +75,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: 'assets/images/svgs', // Src matches are relative to this path.
+          cwd: '/images/svgs', // Src matches are relative to this path.
           src: ['**/*.svg'], // Actual pattern(s) to match.
-          dest: 'assets/images/', // Destination path prefix.
+          dest: '/images/', // Destination path prefix.
           ext: '.min.svg' // Dest filepaths will have this extension.
         }],
       },
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
       },
       default : {
         files: {
-          'assets/images/svg-defs.svg': ['assets/images/svgs/*.svg'],
+          '/images/svg-defs.svg': ['/images/svgs/*.svg'],
         }
       }
     },
@@ -112,9 +112,9 @@ module.exports = function(grunt) {
         // Note: file name that begins with _ are ignored automatically
         files: [{
           expand: true,
-          cwd: 'assets/scss',
+          cwd: '/scss',
           src: ['*.scss'],
-          dest: 'assets/css',
+          dest: '/css',
           ext: '.css'
         }]
       },
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
         browsers: ['> 1%', 'last 2 versions', 'ie 8'],
       },
       dist: {
-        src: 'assets/css/style.css',
+        src: '/css/style.css',
       },
     },
 
@@ -142,7 +142,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'assets/css/style.css': ['assets/css/style.css']
+          '/css/style.css': ['/css/style.css']
         },
       },
     },
@@ -153,7 +153,7 @@ module.exports = function(grunt) {
           report: 'gzip',
         },
         files: {
-          'assets/css/style.min.css': ['assets/css/style.css'],
+          '/css/style.min.css': ['/css/style.css'],
         },
       },
     },
@@ -179,13 +179,13 @@ module.exports = function(grunt) {
 
     open: {
       delayed: {
-        path: 'http://localhost:3000'
+        path: 'http://amcore.local'
       }
     },
 
     watch: {
       javascriptDev: {
-        files: ['assets/js/src/*.js'],
+        files: ['/js/src/*.js'],
         tasks: ['concat:dev', 'uglify:production', 'notify:uglify'],
         options: {
           livereload: false
@@ -194,7 +194,7 @@ module.exports = function(grunt) {
 
       css: {
         files: [
-          'assets/scss/**/*'
+          '/scss/**/*'
         ],
         // Run Sass, autoprefixer, and CSSO
         tasks: ['sass', 'autoprefixer', 'remfallback', 'csso', 'notify:sass'],
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 
       images: {
         files: [
-          'assets/images/**/*'
+          '/images/**/*'
         ],
         tasks: ['svgmin', 'svg2png', 'svgstore'],
         options: {
@@ -220,9 +220,9 @@ module.exports = function(grunt) {
       livereload: {
         options: { livereload: true },
         files: [
-        'assets/css/**/*.css',
+        '/css/**/*.css',
         '**/*.html',
-        'assets/js/*.js',
+        '/js/*.js',
         ]
       },
 
