@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       uglify:{
         options: {
           title: "Building JS Files",
-          message: "JS uglified muther ucker"
+          message: "JS uglified <%= pkg.author.name %>"
         }
       },
       watch: {
