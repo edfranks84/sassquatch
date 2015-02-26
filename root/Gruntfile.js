@@ -48,7 +48,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           separator: ';'
         },
-        src: 'assets/js/main.js',
+        src: 'assets/js/src/main.js',
         dest: 'assets/js/<%= pkg.name %>.js'
       }
     },
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           banner: '<%= banner %>'
         },
         files: {
-          'assets/js/<%= pkg.name %>.min.js': 'assets/js/main.js'
+          'assets/js/<%= pkg.name %>.min.js': 'assets/js/src/main.js'
         }
       }
     },
