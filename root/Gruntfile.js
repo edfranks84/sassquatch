@@ -5,11 +5,11 @@ module.exports = function(grunt) {
   var BUILD_DIR = '.';
 
   // The order matters!
-  // var jsFiles = [
-  //   '/js/plugins/*.js',
-  //   '/js/src/*.js',
-  //   '/js/src/**/*.js'
-  // ];
+  var jsFiles = [
+    'assets/js/plugins/*.js',
+    'assets/js/src/*.js',
+    'assets/js/src/**/*.js'
+  ];
 
   grunt.initConfig({
 
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
           stripBanners: true,
           separator: ';'
         },
-        src: 'assets/js/src/main.js',
+        src: jsFiles,
         dest: 'assets/js/<%= pkg.name %>.js'
       }
     },
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           banner: '<%= banner %>'
         },
         files: {
-          'assets/js/<%= pkg.name %>.min.js': 'assets/js/src/main.js'
+          'assets/js/<%= pkg.name %>.min.js': jsFiles
         }
       }
     },
@@ -119,7 +119,7 @@ module.exports = function(grunt) {
         }]
       },
       options: {
-        sourceMap: true, 
+        sourceMap: false, 
         outputStyle: 'nested'
       }
     },
