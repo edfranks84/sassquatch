@@ -189,3 +189,16 @@ $prefix-for-spec:      true !default;
 @mixin transform-style($style: flat) {
   @include prefixer(transform-style, $style, webkit moz ms o spec);
 }
+
+@mixin respond-to($breakpoint) { 
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+ 
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}

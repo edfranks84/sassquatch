@@ -31,6 +31,16 @@ $susy: (
   gutters: 0.50
 );
 
+// set basics followed by customs 
+$breakpoints: (
+  tiny: 320px
+);
+
+// USEAGE:
+// @include respond-to(tiny) {
+//   color: tomato;
+// }
+
 /* ---------------------------------------------- *\
   1.0 Grid makeup
 \* ---------------------------------------------- */
@@ -54,11 +64,6 @@ $breakpoint-to-ems: true;
     margin: 0 auto;
   }
 }
-
-// set basics followed by customs 
-$breakpoints: (
-  tiny: 320px
-);
 
 //generate our grid classes
 // @for $i from 1 through map-get($susy, columns) {
