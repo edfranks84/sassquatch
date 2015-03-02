@@ -209,7 +209,7 @@ module.exports = function(grunt) {
         files: [
           'assets/images/**/*'
         ],
-        tasks: ['svgmin', 'svg2png', 'svgstore'],
+        tasks: ['svgmin', 'svgstore'],
         options: {
           interrupt: true,
           spawn: false,
